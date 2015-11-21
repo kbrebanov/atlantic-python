@@ -20,4 +20,4 @@ class AtlanticPlan(AtlanticBase):
             params.update({"plan_name": plan_name})
         if platform:
             params.update({"platform": platform })
-        return self.request(params).json()
+        return self.request(params)

@@ -23,7 +23,7 @@ class AtlanticServer(AtlanticBase):
         }
         if cloneimage:
             params.update({"cloneimage": cloneimage})
-        return self.request(params).json()
+        return self.request(params)
 
     def list(self):
         """
@@ -35,7 +35,7 @@ class AtlanticServer(AtlanticBase):
         params = {
             "Action": "list-instances"
         }
-        return self.request(params).json()
+        return self.request(params)
 
     def describe(self, instanceid):
         """
@@ -48,7 +48,7 @@ class AtlanticServer(AtlanticBase):
             "Action": "describe-instance",
             "instanceid": instanceid
         }
-        return self.request(params).json()
+        return self.request(params)
 
     def reboot(self, instanceid, reboottype="soft"):
         """
@@ -61,7 +61,7 @@ class AtlanticServer(AtlanticBase):
             "instanceid": instanceid,
             "reboottype": reboottype
         }
-        return self.request(params).json()
+        return self.request(params)
 
     def terminate(self, instanceid):
         """
@@ -73,4 +73,4 @@ class AtlanticServer(AtlanticBase):
             "Action": "terminate-instance",
             "instanceid": instanceid
         }
-        return self.request(params).json()
+        return self.request(params)

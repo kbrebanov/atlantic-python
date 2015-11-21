@@ -17,4 +17,4 @@ class AtlanticImage(AtlanticBase):
         }
         if imageid:
             params.update({"imageid": imageid})
-        return self.request(params).json()
+        return self.request(params)
