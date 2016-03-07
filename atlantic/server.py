@@ -5,7 +5,7 @@ class AtlanticServer(AtlanticBase):
         AtlanticBase.__init__(self, access_key, private_key)
 
     def run(self, servername, imageid, planname, vm_location,
-            enablebackup="N", serverqty=1, cloneimage=None):
+            enablebackup="N", serverqty=1, cloneimage=None, key_id=None):
         """
         This method enables you to create new cloud servers by specifying a
         flexible set of configuration parameters.
@@ -23,6 +23,8 @@ class AtlanticServer(AtlanticBase):
         }
         if cloneimage:
             params.update({"cloneimage": cloneimage})
+        if key_id:
+            params.update({"key_id": key_id})
         return self.request(params)
 
     def list(self):
